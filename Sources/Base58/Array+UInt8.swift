@@ -14,9 +14,7 @@ public extension Array where Element == UInt8 {
             integer = quotient
         }
 
-        let prefix = Array(self.prefix { $0 == 0 }).map { _ in alphabet[0] }
-        base58.insert(contentsOf: prefix, at: 0)
-
+        base58.insert(contentsOf: Array(prefix { $0 == 0 }).map { _ in alphabet[0] }, at: 0)
         return String(bytes: base58, encoding: .utf8)
     }
 }
