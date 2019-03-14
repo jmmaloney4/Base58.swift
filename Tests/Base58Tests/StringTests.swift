@@ -4,12 +4,12 @@ import XCTest
 
 final class StringTests: XCTestCase {
 
-    func testDecode() {
-        XCTAssertEqual("M".decode(), [20])
+    func testBase58EncodedStringToBytes() {
+        XCTAssertEqual("M".base58EncodedStringToBytes(), [20])
 
     }
 
     static var allTests = [
-        ("testDecode", testDecode),
+        ("testBase58EncodedStringToBytes", testBase58EncodedStringToBytes),
     ]
 }
