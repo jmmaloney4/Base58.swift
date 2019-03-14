@@ -12,7 +12,7 @@ public extension String {
         var answer = BigUInt(0)
         var i = BigUInt(1)
 
-        for char in bytes {
+        for char in bytes.reversed() {
             guard let index = String.alphabet.firstIndex(of: char) else {
                 return []
             }
@@ -21,7 +21,7 @@ public extension String {
             i *= String.radix
         }
 
-        return Array((bytes as [UInt8]).prefix{ i in i == String.alphabet[0] } + answer.serialize())
+        return Array(bytes.prefix { i in i == String.alphabet[0] } + answer.serialize())
     }
 
 }

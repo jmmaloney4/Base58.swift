@@ -5,7 +5,8 @@ import XCTest
 final class StringTests: XCTestCase {
 
     func testDecode() {
-        // @todo
+        XCTAssertEqual("M".decode(), [20])
+
     }
 
     static var allTests = [
