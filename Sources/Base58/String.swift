@@ -2,7 +2,6 @@ import BigInt
 
 public extension String {
 
-
     // @todo should this be done with the decode/encode generic function?
     // @todo better naming?
     public func base58EncodedStringToBytes() -> [UInt8] {
