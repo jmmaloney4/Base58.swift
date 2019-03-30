@@ -25,7 +25,10 @@ targets: [
 
 ```swift
 
-// @todo
+import Base58
+
+print([20].base58EncodedString()!) // print: 20
+print("M".base58EncodedStringToBytes()) // print: [20]
 
 ```
 
