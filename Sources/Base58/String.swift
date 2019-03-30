@@ -4,7 +4,7 @@ public extension String {
 
     // @todo should this be done with the decode/encode generic function?
     // @todo better naming?
-    public func base58EncodedStringToBytes() -> [UInt8] {
+    func base58EncodedStringToBytes() -> [UInt8] {
         var answer = BigUInt(0)
         var i = BigUInt(1)
 

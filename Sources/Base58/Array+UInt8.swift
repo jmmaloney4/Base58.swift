@@ -3,18 +3,18 @@ import BigInt
 
 public extension Array where Element == UInt8 {
 
-    public func base58EncodedString() -> String? {
-        var base58 = [UInt8]()
+    func base58EncodedString() -> String? {
+        var bytes = [UInt8]()
 
         var integer = BigUInt(Data(self))
 
         while integer > 0 {
             let (quotient, remainder) = integer.quotientAndRemainder(dividingBy: radix)
-            base58.insert(alphabet[Int(remainder)], at: 0)
+            bytes.insert(alphabet[Int(remainder)], at: 0)
             integer = quotient
         }
 
-        base58.insert(contentsOf: Array(prefix { $0 == 0 }).map { _ in alphabet[0] }, at: 0)
-        return String(bytes: base58, encoding: .utf8)
+        bytes.insert(contentsOf: Array(prefix { $0 == 0 }).map { _ in alphabet[0] }, at: 0)
+        return String(bytes: bytes, encoding: .utf8)
     }
 }
