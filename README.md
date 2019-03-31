@@ -14,7 +14,7 @@ The `Base58.swift` package can be easily imported into your project using the `s
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yeeth/Base58.swift.git", from: "0.1.0"),
+    .package(url: "https://github.com/yeeth/Base58.swift.git", from: "1.0.0"),
 ],
 targets: [
     .target(name: "MyTarget", dependencies: ["Base58"]),
